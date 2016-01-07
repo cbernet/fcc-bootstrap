@@ -1,6 +1,8 @@
+source env_hepmc.sh
+
 base=$PWD
-build_dir=$base/Softare/HepMC
-install_dir=$base/Install
+build_dir=$base/build/HepMC
+install_dir=$HEPMC_PREFIX
 url=http://lcgapp.cern.ch/project/simu/HepMC/download
 tgz=HepMC-2.06.09.tar.gz
 threads=4
@@ -13,7 +15,6 @@ echo unpacking...
 tar -zxvf $tgz
 cd HepMC-2.06.09
 mkdir -p $install_dir
-export HEPMC_PREFIX=$install_dir
 echo configure...
 ./configure --prefix=$HEPMC_PREFIX --with-momentum=GEV --with-length=MM
 echo make install...

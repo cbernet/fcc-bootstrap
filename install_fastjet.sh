@@ -1,6 +1,8 @@
+source env_fastjet.sh
+
 base=$PWD
-build_dir=$base/Softare/fastjet
-install_dir=$base/Install
+build_dir=$base/build/fastjet
+install_dir=$FASTJET_ROOT_DIR
 url=http://fastjet.fr/repo
 tgz=fastjet-3.1.3.tar.gz
 threads=4
@@ -13,7 +15,6 @@ echo unpacking...
 tar -zxvf $tgz
 cd fastjet-3.1.3
 mkdir -p $install_dir
-export FASTJET_ROOT_DIR=$install_dir
 echo configure...
 ./configure --prefix=$FASTJET_ROOT_DIR
 echo make install...

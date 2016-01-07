@@ -1,6 +1,8 @@
+source env_root.sh
+
 base=$PWD
-root_build_dir=$base/Softare/root
-root_install_dir=$base/Install
+root_build_dir=$base/build/root
+root_install_dir=$ROOTSYS
 root_tgz=root_v5.34.34.source.tar.gz
 threads=4
 
