@@ -1,10 +1,11 @@
-basedir=$PWD/FCC
+base=$PWD
+FCC=$base/FCC
 github_user=cbernet
 init_script=init_macos.sh
 
-mkdir $basedir
+mkdir $FCC
 
-cd $basedir
+cd $FCC
 
 git clone https://github.com/$github_user/albers-core.git
 cd albers-core
@@ -15,7 +16,7 @@ cd build
 cmake -DCMAKE_INSTALL_PREFIX=../install ..
 make -j 4 install
 
-cd $basedir
+cd $FCC
 
 git clone https://github.com/$github_user/fcc-edm.git
 cd fcc-edm
@@ -26,7 +27,7 @@ cd build
 cmake -DCMAKE_INSTALL_PREFIX=../install ..
 make -j 4 install
 
-cd $basedir
+cd $FCC
 
 git clone https://github.com/$github_user/analysis-cpp.git
 cd analysis-cpp
@@ -37,7 +38,7 @@ cd build
 cmake -DCMAKE_INSTALL_PREFIX=../install ..
 make -j 4 install
 
-cd $basedir
+cd $FCC
 
 git clone https://github.com/$github_user/pythiafcc.git
 cd pythiafcc
@@ -48,14 +49,16 @@ cd build
 cmake -DCMAKE_INSTALL_PREFIX=../install ..
 make -j 4 install
 
-cd $basedir
+cd $FCC
 
 git clone https://github.com/$github_user/heppy.git
 cd heppy
 source init.sh
 
-cd $basedir
+cd $FCC
 
 git clone https://github.com/$github_user/heppy_fcc.git
 cd heppy_fcc
 source init.sh
+
+cd $FCC
