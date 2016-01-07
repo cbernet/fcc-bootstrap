@@ -1,4 +1,5 @@
 source env_pythia.sh
+source wget.sh
 
 base=$PWD
 build_dir=$base/build/pythia
@@ -10,7 +11,7 @@ threads=4
 mkdir -p $build_dir
 cd $build_dir
 echo downloading source...
-curl -O $url/$tgz
+wget $url/$tgz
 echo unpacking...
 tar -zxvf $tgz
 cd pythia8215
