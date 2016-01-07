@@ -14,3 +14,5 @@ mkdir -p $root_install_dir
 make -j $threads install
 
 source $root_install_dir/bin/thisroot.sh
+
+cd $base 
