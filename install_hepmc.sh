@@ -1,5 +1,5 @@
 source env_hepmc.sh
-source wget.sh
+source wwget.sh
 
 base=$PWD
 build_dir=$base/build/HepMC
@@ -11,7 +11,7 @@ threads=4
 mkdir -p $build_dir
 cd $build_dir
 echo downloading source...
-wget $url/$tgz
+wwget $url/$tgz
 echo unpacking...
 tar -zxvf $tgz
 cd HepMC-2.06.09

@@ -1,4 +1,4 @@
-wget()
+wwget()
 {
     # wrapper to curl on macos 
     if test $# -ne 1 ; then
@@ -7,15 +7,15 @@ wget()
     fi
     url=$1
 
-    wget='unknown'
+    cmd='unknown'
     unamestr=`uname`
     if [[ "$unamestr" == 'Linux' ]]; then
-	wget='wget'
+	cmd='wget'
     elif [[ "$unamestr" == 'Darwin' ]]; then
-	wget='curl -O'
+	cmd='curl -O'
     fi
-    echo $wget $url
-    $wget $url
+    echo $cmd $url
+    $cmd $url
 }
 
 
