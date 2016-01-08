@@ -1,7 +1,7 @@
 base=$PWD
 FCC=$base/FCC
 github_user=cbernet
-init_script=init_macos.sh
+init_script=init.sh
 
 mkdir $FCC
 
