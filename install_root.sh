@@ -15,6 +15,5 @@ mkdir -p $root_install_dir
 ./configure --prefix=$root_install_dir
 make -j $threads install
 
-source env_root.sh
-
 cd $base 
+source env_root.sh
