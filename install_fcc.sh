@@ -1,9 +1,10 @@
-if test $# -ne 1 ; then
+if test $# -ne 2 ; then
     the_script=`basename ${BASH_SOURCE[0]}`
-    echo "$the_script <fcc_dir>"
+    echo "$the_script <fcc_source_dir> <fcc_install_dir>"
     return 1
 fi
 FCC=`readlink -f $1`
+fcc_install_dir=`readlink -f $2`
 github_user=cbernet
 init_script=init.sh
 
@@ -18,7 +19,7 @@ source $init_script
 
 mkdir build
 cd build
-cmake -DCMAKE_INSTALL_PREFIX=../install ..
+cmake -DCMAKE_INSTALL_PREFIX=$fcc_install_dir ..
 make -j $threads install
 
 cd $FCC
@@ -29,7 +30,7 @@ source $init_script
 
 mkdir build
 cd build
-cmake -DCMAKE_INSTALL_PREFIX=../install ..
+cmake -DCMAKE_INSTALL_PREFIX=$fcc_install_dir ..
 make -j $threads install
 
 cd $FCC
@@ -40,7 +41,7 @@ source $init_script
 
 mkdir build
 cd build
-cmake -DCMAKE_INSTALL_PREFIX=../install ..
+cmake -DCMAKE_INSTALL_PREFIX=$fcc_install_dir ..
 make -j $threads install
 
 cd $FCC
@@ -51,7 +52,7 @@ source $init_script
 
 mkdir build
 cd build
-cmake -DCMAKE_INSTALL_PREFIX=../install ..
+cmake -DCMAKE_INSTALL_PREFIX=$fcc_install_dir ..
 make -j $threads install
 
 cd $FCC
