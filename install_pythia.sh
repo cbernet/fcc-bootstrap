@@ -1,6 +1,6 @@
-tmp=`dirname ${BASH_SOURCE[@]}`
+tmp=`dirname ${BASH_SOURCE[0]}`
 fcc_bootstrap_dir=`readlink -f $tmp`
-the_script=`basename ${BASH_SOURCE[@]}`
+the_script=`basename ${BASH_SOURCE[0]}`
 if test $# -ne 2 ; then
     echo "$the_script <fcc_build_dir> <fcc_install_dir>"
     return 1

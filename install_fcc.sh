@@ -1,5 +1,5 @@
 if test $# -ne 1 ; then
-    the_script=`basename ${BASH_SOURCE[@]}`
+    the_script=`basename ${BASH_SOURCE[0]}`
     echo "$the_script <fcc_dir>"
     return 1
 fi
