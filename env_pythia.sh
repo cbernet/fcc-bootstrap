@@ -1,2 +1,2 @@
-base=$PWD
-export PYTHIA8_DIR=$base/local
+install=$1
+export PYTHIA8_DIR=$install

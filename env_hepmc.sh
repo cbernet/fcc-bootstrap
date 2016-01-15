@@ -1,2 +1,2 @@
-base=$PWD
-export HEPMC_PREFIX=$base/local
+install=$1
+export HEPMC_PREFIX=$install
