@@ -1,2 +1,2 @@
-base=$PWD
-export FASTJET_ROOT_DIR=$base/local
+install=$1
+export FASTJET_ROOT_DIR=$install

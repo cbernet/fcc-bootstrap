@@ -6,15 +6,15 @@ fi
 FCC=`readlink -f $1`
 fcc_install_dir=`readlink -f $2`
 github_user=cbernet
-init_script=init.sh
+init_script=./init.sh
 
 threads=`grep -c ^processor /proc/cpuinfo`
 
 mkdir $FCC
 cd $FCC
 
-git clone https://github.com/$github_user/albers-core.git
-cd albers-core
+git clone https://github.com/$github_user/podio.git
+cd podio
 source $init_script
 
 mkdir build
@@ -35,19 +35,8 @@ make -j $threads install
 
 cd $FCC
 
-git clone https://github.com/$github_user/analysis-cpp.git
-cd analysis-cpp
-source $init_script
-
-mkdir build
-cd build
-cmake -DCMAKE_INSTALL_PREFIX=$fcc_install_dir ..
-make -j $threads install
-
-cd $FCC
-
-git clone https://github.com/$github_user/pythiafcc.git
-cd pythiafcc
+git clone https://github.com/$github_user/fcc-physics.git
+cd fcc-physics
 source $init_script
 
 mkdir build
@@ -59,12 +48,6 @@ cd $FCC
 
 git clone https://github.com/$github_user/heppy.git
 cd heppy
-source init.sh
-
-cd $FCC
-
-git clone https://github.com/$github_user/heppy_fcc.git
-cd heppy_fcc
-source init.sh
+source $init_script
 
 cd $FCC
