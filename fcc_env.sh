@@ -13,6 +13,7 @@ export FCCEDM=$FCCRELEASE
 export FCCPHYSICS=$FCCRELEASE
 export HEPPY=$FCCRELEASE/FCC/heppy
 
+export SCRAM_ARCH=slc6_amd64_gcc493
 cd $FCCRELEASE/CMS
 cmsenv 
 cd - 
