@@ -8,10 +8,10 @@ echo "using release $FCCRELEASE"
 
 source /cvmfs/cms.cern.ch/cmsset_default.sh 
 
-# export PODIO=$FCCRELEASE 
-# export FCCEDM=$FCCRELEASE
-# export FCCPHYSICS=$FCCRELEASE
-# export HEPPY=$FCCRELEASE/FCC/heppy
+export PODIO=$FCCRELEASE/install_fcc
+export FCCEDM=$FCCRELEASE/install_fcc
+export FCCPHYSICS=$FCCRELEASE/install_fcc
+export HEPPY=$FCCRELEASE/FCC/heppy
 
 export SCRAM_ARCH=slc6_amd64_gcc493
 cd $FCCRELEASE/CMS
