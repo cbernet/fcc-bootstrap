@@ -8,18 +8,15 @@ echo "using release $FCCRELEASE"
 
 source /cvmfs/cms.cern.ch/cmsset_default.sh 
 
-export PODIO=$FCCRELEASE/install_fcc
-export FCCEDM=$FCCRELEASE/install_fcc
-export FCCPHYSICS=$FCCRELEASE/install_fcc
-export HEPPY=$FCCRELEASE/FCC/heppy
 
 export SCRAM_ARCH=slc6_amd64_gcc493
 cd $FCCRELEASE/CMS
 cmsenv 
 cd - 
 
-export PYTHIA8_DIR=$FCCRELEASE/install
-export PYTHIA8DATA=${PYTHIA8_DIR}/share/Pythia8/xmldoc
+source $FCCRELEASE/fcc-bootstrap/env_pheno.sh $FCCRELEASE/install
+source $FCCRELEASE/fcc-bootstrap/env_fcc.sh $FCCRELEASE/install_fcc
+export HEPPY=$FCCRELEASE/FCC/heppy
 
 export PATH=$FCCRELEASE/install_fcc/bin:$FCCRELEASE/install/bin:$PATH
 export LD_LIBRARY_PATH=$FCCRELEASE/install_fcc/lib:$FCCRELEASE/install/lib:$LD_LIBRARY_PATH
