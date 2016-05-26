@@ -14,6 +14,8 @@ cd $FCCRELEASE/CMS
 cmsenv 
 cd - 
 
+echo CMSSW_BASE: `readlink -f $FCCRELEASE/CMS` 
+
 source $FCCRELEASE/fcc-bootstrap/env_pheno.sh $FCCRELEASE/install
 source $FCCRELEASE/fcc-bootstrap/env_fcc.sh $FCCRELEASE/install_fcc
 export HEPPY=$FCCRELEASE/FCC/heppy
